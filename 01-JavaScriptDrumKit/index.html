@@ -2,55 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>JS Drum Kit</title>
+  <title>JS Ukulele Kit</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 
   <div class="keys">
-    <div data-key="65" class="key">
+    <div data-key="a" class="key">
       <kbd>a</kbd>
       <span class="sound">c4</span>
     </div>
-    <div data-key="83" class="key">
+    <div data-key="s" class="key">
       <kbd>s</kbd>
       <span class="sound">d4</span>
     </div>
-    <div data-key="68" class="key">
+    <div data-key="d" class="key">
       <kbd>d</kbd>
       <span class="sound">e4</span>
     </div>
-    <div data-key="70" class="key">
+    <div data-key="f" class="key">
       <kbd>f</kbd>
       <span class="sound">f4</span>
     </div>
-    <div data-key="71" class="key">
+    <div data-key="g" class="key">
       <kbd>g</kbd>
       <span class="sound">g4</span>
     </div>
-    <div data-key="72" class="key">
+    <div data-key="h" class="key">
       <kbd>h</kbd>
       <span class="sound">a4</span>
     </div>
-    <div data-key="74" class="key">
+    <div data-key="j" class="key">
       <kbd>j</kbd>
       <span class="sound">b4</span>
     </div>
-    <div data-key="75" class="key">
+    <div data-key="k" class="key">
       <kbd>k</kbd>
       <span class="sound">c5</span>
     </div>
   </div>
 
-  <audio data-key="65" src="sounds/c4.m4a"></audio>
-  <audio data-key="83" src="sounds/d4.m4a"></audio>
-  <audio data-key="68" src="sounds/e4.m4a"></audio>
-  <audio data-key="70" src="sounds/f4.m4a"></audio>
-  <audio data-key="71" src="sounds/g4.m4a"></audio>
-  <audio data-key="72" src="sounds/a4.m4a"></audio>
-  <audio data-key="74" src="sounds/b4.m4a"></audio>
-  <audio data-key="75" src="sounds/c5.m4a"></audio>
+  <audio data-key="a" src="sounds/c4.m4a"></audio>
+  <audio data-key="s" src="sounds/d4.m4a"></audio>
+  <audio data-key="d" src="sounds/e4.m4a"></audio>
+  <audio data-key="f" src="sounds/f4.m4a"></audio>
+  <audio data-key="g" src="sounds/g4.m4a"></audio>
+  <audio data-key="h" src="sounds/a4.m4a"></audio>
+  <audio data-key="j" src="sounds/b4.m4a"></audio>
+  <audio data-key="k" src="sounds/c5.m4a"></audio>
 
 <script>
   function removeTransition(e) {
@@ -59,8 +59,8 @@
   }
 
   function playSound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    const audio = document.querySelector(`audio[data-key="${e.key}"]`);
+    const key = document.querySelector(`div[data-key="${e.key}"]`);
     if (!audio) return;
 
     key.classList.add('playing');
